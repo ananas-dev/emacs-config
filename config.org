@@ -2,11 +2,13 @@
 #+AUTHOR: Lucien Fiorini
 #+PROPERTY: header-args :tangle config.el
 
-* Table of contents :TOC3:noexport:
+* Table of contents :toc:noexport:
+- [[#introduction][Introduction]]
 - [[#basic-configuration][Basic configuration]]
   - [[#name-and-email][Name and Email]]
   - [[#font][Font]]
   - [[#theme][Theme]]
+  - [[#disable-mouse-support][Disable mouse support]]
 - [[#editor][Editor]]
   - [[#relative-lines][Relative lines]]
 - [[#org-mode][Org Mode]]
