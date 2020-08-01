@@ -2,34 +2,43 @@
 #+AUTHOR: Lucien Fiorini
 #+PROPERTY: header-args :tangle config.el
 
-* Table of contents :toc:
+* Table of contents :TOC3:noexport:
 - [[#basic-configuration][Basic configuration]]
+  - [[#name-and-email][Name and Email]]
+  - [[#font][Font]]
+  - [[#theme][Theme]]
 - [[#editor][Editor]]
   - [[#relative-lines][Relative lines]]
 - [[#org-mode][Org Mode]]
   - [[#set-the-org-directory][Set the org directory]]
+  - [[#packages][Packages]]
 - [[#programming][Programming]]
-  - [[#cc][CC]]
-- [[#package-loading][Package Loading]]
-  - [[#ox-twbs][ox-twbs]]
-  - [[#gdscript-mode][gdscript-mode]]
-- [[#custom-set][Custom Set]]
-  - [[#variables][Variables]]
-  - [[#faces][Faces]]
+  - [[#c][C++]]
+  - [[#godot][Godot]]
+
+* Introduction
+#+BEGIN_QUOTE
+This configuration is meant to be used with DOOM Emacs.
+#+END_QUOTE
+
 
 * Basic configuration
+** Name and Email
 #+BEGIN_SRC elisp
-;; Name and Email
 (setq user-full-name "Lucien Fiorini"
       user-mail-address "lucienfiorini@protonmail.com")
-
-;; Font
-(setq doom-font (font-spec :family "Source Code Pro" :size 15))
-
-;; Theme
+#+END_SRC
+** Font
+I don't set the size so that it can adapt automatically to the size of the screen, it will change in the future.
+#+BEGIN_SRC elisp
+(setq doom-font (font-spec :family "Source Code Pro"))
+#+END_SRC
+** Theme
+Doom's themes are mostly really good !
+#+BEGIN_SRC elisp
 (setq doom-theme 'doom-gruvbox)
 #+END_SRC
-
+** TODO Disable mouse support
 * Editor
 ** Relative lines
 #+BEGIN_SRC elisp
@@ -40,14 +49,21 @@
 #+BEGIN_SRC elisp
 (setq org-directory "~/misc/org/")
 #+END_SRC
+** Packages
+*** ox-twbs
+#+BEGIN_SRC elisp
+(eval-after-load "org"
+  '(require 'ox-twbs nil t))
+#+END_SRC
 * Programming
-** CC
+** C++
 *** CPlusPlusMode
 **** Enable .h file support
 #+BEGIN_SRC elisp
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 #+END_SRC
 **** Style
+I use K&R style indentatons.
 #+BEGIN_SRC elisp
 (defun my-c++-mode-hook ()
   (c-set-style "k&r")
@@ -55,64 +71,9 @@
 
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 #+END_SRC
-
-* Package Loading
-** ox-twbs
-#+BEGIN_SRC elisp
-(eval-after-load "org"
-  '(require 'ox-twbs nil t))
-#+END_SRC
-** gdscript-mode
+** Godot
+*** Packages
+**** gdscript-mode
 #+BEGIN_SRC elisp
 (require 'gdscript-mode)
-
-#+END_SRC
-
-* Custom Set
-** Variables
-#+BEGIN_SRC elisp
-(custom-set-variables
- '(ansi-color-names-vector
-   ["#272C36" "#BF616A" "#A3BE8C" "#EBCB8B" "#81A1C1" "#B48EAD" "#88C0D0" "#ECEFF4"])
- '(custom-safe-themes
-   (quote
-    ("e2acbf379aa541e07373395b977a99c878c30f20c3761aac23e9223345526bcc" default)))
- '(fci-rule-color "#4C566A")
- '(jdee-db-active-breakpoint-face-colors (cons "#191C25" "#81A1C1"))
- '(jdee-db-requested-breakpoint-face-colors (cons "#191C25" "#A3BE8C"))
- '(jdee-db-spec-breakpoint-face-colors (cons "#191C25" "#434C5E"))
- '(objed-cursor-color "#BF616A")
- '(pdf-view-midnight-colors (cons "#ECEFF4" "#2E3440"))
- '(rustic-ansi-faces
-   ["#2E3440" "#BF616A" "#A3BE8C" "#EBCB8B" "#81A1C1" "#B48EAD" "#88C0D0" "#ECEFF4"])
- '(vc-annotate-background "#2E3440")
- '(vc-annotate-color-map
-   (list
-    (cons 20 "#A3BE8C")
-    (cons 40 "#bbc28b")
-    (cons 60 "#d3c68b")
-    (cons 80 "#EBCB8B")
-    (cons 100 "#e2b482")
-    (cons 120 "#d99d79")
-    (cons 140 "#D08770")
-    (cons 160 "#c68984")
-    (cons 180 "#bd8b98")
-    (cons 200 "#B48EAD")
-    (cons 220 "#b77f96")
-    (cons 240 "#bb7080")
-    (cons 260 "#BF616A")
-    (cons 280 "#a05b67")
-    (cons 300 "#815664")
-    (cons 320 "#625161")
-    (cons 340 "#4C566A")
-    (cons 360 "#4C566A")))
- '(vc-annotate-very-old-color nil))
-#+END_SRC
-
-#+RESULTS:
-
-** Faces
-#+BEGIN_SRC elisp
-(custom-set-faces
- )
 #+END_SRC
