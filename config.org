@@ -4,8 +4,9 @@
 
 * Table of contents :toc:noexport:
 - [[#introduction][Introduction]]
-- [[#basic-configuration][Basic configuration]]
+- [[#user-variables][User Variables]]
   - [[#name-and-email][Name and Email]]
+- [[#ui][UI]]
   - [[#font][Font]]
   - [[#theme][Theme]]
   - [[#disable-mouse-support][Disable mouse support]]
@@ -22,14 +23,13 @@
 #+BEGIN_QUOTE
 This configuration is meant to be used with DOOM Emacs.
 #+END_QUOTE
-
-
-* Basic configuration
+* User Variables
 ** Name and Email
 #+BEGIN_SRC elisp
 (setq user-full-name "Lucien Fiorini"
       user-mail-address "lucienfiorini@protonmail.com")
 #+END_SRC
+* UI
 ** Font
 I don't set the size so that it can adapt automatically to the size of the screen, it will change in the future.
 #+BEGIN_SRC elisp
