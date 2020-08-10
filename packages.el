@@ -51,4 +51,5 @@
 
 ;; Package list
 (package! ox-twbs)
+(package! ox-gfm)
 (package! gdscript-mode)

@@ -1,9 +1,9 @@
 (setq user-full-name "Lucien Fiorini"
       user-mail-address "lucienfiorini@protonmail.com")
 
-(setq doom-font (font-spec :family "Source Code Pro"))
+(setq doom-font (font-spec :family "Source Code Pro" :size 15))
 
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-nord)
 
 (setq display-line-numbers-type 'relative)
 
@@ -16,8 +16,11 @@
 
 (defun my-c++-mode-hook ()
   (c-set-style "k&r")
+  (setq c-basic-offset 4)
 )
 
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
 (require 'gdscript-mode)
+
+(setq company-idle-delay 0.2)

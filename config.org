@@ -18,6 +18,8 @@
 - [[#programming][Programming]]
   - [[#c][C++]]
   - [[#godot][Godot]]
+- [[#module-config][Module Config]]
+  - [[#company][Company]]
 
 * Introduction
 #+BEGIN_QUOTE
@@ -33,12 +35,12 @@ This configuration is meant to be used with DOOM Emacs.
 ** Font
 I don't set the size so that it can adapt automatically to the size of the screen, it will change in the future.
 #+BEGIN_SRC elisp
-(setq doom-font (font-spec :family "Source Code Pro"))
+(setq doom-font (font-spec :family "Source Code Pro" :size 15))
 #+END_SRC
 ** Theme
 Doom's themes are mostly really good !
 #+BEGIN_SRC elisp
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-nord)
 #+END_SRC
 ** TODO Disable mouse support
 * Editor
@@ -60,7 +62,7 @@ Doom's themes are mostly really good !
 * Programming
 ** C++
 *** CPlusPlusMode
-**** Enable .h file support
+Enable .h file support
 #+BEGIN_SRC elisp
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 #+END_SRC
@@ -69,6 +71,7 @@ I use K&R style indentatons.
 #+BEGIN_SRC elisp
 (defun my-c++-mode-hook ()
   (c-set-style "k&r")
+  (setq c-basic-offset 4)
 )
 
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
@@ -78,4 +81,11 @@ I use K&R style indentatons.
 **** gdscript-mode
 #+BEGIN_SRC elisp
 (require 'gdscript-mode)
+#+END_SRC
+
+* Module Config
+** Company
+Reduce the idle delay.
+#+BEGIN_SRC elisp
+(setq company-idle-delay 0.2)
 #+END_SRC
