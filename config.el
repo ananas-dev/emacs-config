@@ -1,9 +1,9 @@
 (setq user-full-name "Lucien Fiorini"
       user-mail-address "lucienfiorini@protonmail.com")
 
-(setq doom-font (font-spec :family "Source Code Pro" :size 15))
+(setq doom-font (font-spec :family "Source Code Pro" :size 16))
 
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-gruvbox)
 
 (setq display-line-numbers-type 'relative)
 

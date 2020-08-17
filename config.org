@@ -35,13 +35,13 @@ This configuration is meant to be used with DOOM Emacs.
 ** Font
 I don't set the size so that it can adapt automatically to the size of the screen, it will change in the future.
 #+BEGIN_SRC elisp
-(setq doom-font (font-spec :family "Source Code Pro" :size 15))
+(setq doom-font (font-spec :family "Source Code Pro" :size 16))
 #+END_SRC
 ** Theme
 Doom's themes are mostly really good !
 #+BEGIN_SRC elisp
-(setq doom-theme 'doom-nord)
-#+END_SRC
+(setq doom-theme 'doom-gruvbox)
+#+End_src
 ** TODO Disable mouse support
 * Editor
 ** Relative lines
